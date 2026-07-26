@@ -1,32 +1,23 @@
-name: agent-reliability-mcp
-slug: agent-reliability-mcp
-version: 0.1.0
-description: Calculate success probability, bottlenecks and improvement tips for AI agent tool-chains. Pure math, zero API cost.
-language: python
-entry: src/server.py
-transport: stdio
-# http later for MCPize cloud
+# MCPize Configuration
+# Docs: https://mcpize.com/docs/mcpize-yaml
 
-pricing:
-  free:
-    calls_per_day: 50
-  pro:
-    price_usd: 19
-    calls_per_day: 500
-  team:
-    price_usd: 79
-    calls_per_day: 5000
+version: 1
 
-secrets: []  # none needed
+name: "Agent Reliability"
+slug: "agent-reliability"
 
-categories:
-  - ai-infrastructure
-  - developer-tools
-  - reliability
+runtime: python
+entry: "src/server.py"
 
-keywords:
-  - agent reliability
-  - tool chain
-  - cascading failure
-  - success probability
-  - MCP
+build:
+  install: "pip install ."
+
+start:
+  type: stdio
+  command: "python"
+  args:
+    - "-m"
+    - "src.server"
+
+bridge:
+  mode: stdio
