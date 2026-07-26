@@ -4,6 +4,16 @@
 
 **One-liner**: Pure-math MCP server that tells you the real success probability of multi-step AI agents, finds the weakest tools, and suggests fixes. Zero external APIs, zero cost to run.
 
+## Connect via MCPize
+
+Use this MCP server instantly with no local installation:
+
+```bash
+npx -y mcpize connect @princeruhulofficial/agent-reliability --client claude
+```
+
+Or connect at: **https://mcpize.com/mcp/agent-reliability**
+
 ## Why this exists
 
 AI agents look great in demos. In production a single 5% tool failure compounds into 40-60% overall failure after a few steps. This MCP lets any agent (or developer) ask:
